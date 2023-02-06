@@ -1,0 +1,54 @@
+################### PROJET QUIZZEO #####################
+
+######################### USERS ########################
+
+3 types users :
+    - user :
+        - participer aux quizz
+
+    - quizzer :
+        - participer aux quizz
+        - créer des quizz :
+            - ajouter 
+            - modifier
+            - supprimer
+            - afficher
+
+    - administrator :
+        - participer aux quizz
+        - créer des quizz :
+            - ajouter 
+            - modifier
+            - supprimer
+            - afficher
+        - gérer tous les quizz 
+
+####################### LE SITE #######################
+
+Page d'inscription :
+    - demander si l'utilisateur est un simple user ou un quizzer
+    
+    User :
+        - afficher une page de listing des quizz
+        - afficher une serie de question lorsqu'on clique sur un quizz (JS)
+
+    Quizzer :
+        - user's perms
+        - pouvoir créer un quizz
+        - pouvoir voir les quizz créer par le quizzer :
+            - modifier
+            - supprimer
+
+    Administrator :
+        - user's perms
+        - quizzer's perms
+        - pouvoir voir tous les quizz du site :
+            - modifier
+            - supprimer
+        - gérer les utilisateurs et quizzers :
+            - modifier
+            - supprimer
+
+
+
+    
