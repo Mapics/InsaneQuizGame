@@ -1,0 +1,127 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.header {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #544B72;
+}
+
+.accStatus {
+    color: #FFF;
+    height: 40%;
+    width: 7rem;
+    background-color: transparent;
+    border-radius: 60px;
+    border: 2px solid #FFF;
+    margin-left: 10%;
+}
+
+.rightHead {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: space-evenly;
+    justify-content: center;
+}
+
+.accountStatus {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 1%;
+    margin-right: 8%;
+}
+
+.main {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.container {
+    height: 100%;
+    width: 80%;
+    background-color: #B3A1A1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.game {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.rightMenu {
+    height: 100%;
+    width: 20%;
+    background-color: #8479A9;
+}
+
+.accueil {
+    background-color: #8479A9;
+    height: 90%;
+    width: 60%;
+    border-radius: 15px;
+}
+
+.leaderboard {
+    background-color: #8479A9;
+    height: 90%;
+    width: 25%;
+    border-radius: 15px;
+}
+
+
+/* .containerAccount {
+    height: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+}
+
+#btn {
+    height: 7%;
+    width: 70%;
+} */
