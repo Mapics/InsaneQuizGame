@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>QUIZZEO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,12 +23,42 @@
             </div>
         </div>
     </div>
+    <div class="popupLogin">
+        <div class="content">
+            <h2>LOGIN</h2>
+            <form action="#">
+                <div class="btnContainer">
+                    <ion-icon name="mail-outline" class="iconLogin"></ion-icon>
+                    <input type="email" required>
+                    <label>EMAIL</label>
+                </div>
+                <div class="btnContainer">
+                    <ion-icon name="lock-closed-outline" class="iconLogin"></ion-icon>
+                    <input type="password" required>
+                    <label>PASSWORD</label>
+                </div>
+                <div class="remember">
+                    <select name="userType" class="userType">
+                        <option value="User">User</option>
+                        <option value="Quizzer">Quizzer</option>
+                    </select>
+                    <label><input type="checkbox">Remember me</label>
+                </div>
+            </form>
+            <div class="submit">
+                <button type="submit" class="btn">Login</button>
+            </div>
+            <div class="loginRegister">
+                <p>Don't have an account ? <a href="#">Register</a></p>
+            </div>
+        </div>
+    </div>
     <div class="main">
         <div class="container">
             <h1>QUIZZEO</h1>
             <div class="game">
                 <div class="accueil">
-    
+
                 </div>
                 <div class="leaderboard">
     
@@ -38,12 +69,7 @@
 
         </div>
     </div>
-    <!-- <div class="containerAccount">
-        <input id="btn" class="btnName" type="text" name="name">
-        <input id="btn" class="btnMail" type="text" name="mail">
-        <input id="btn" class="btnPassword" type="password" name="password">
-        <input id="btn" class="btnConfirm" type="submit" name="confirm">    
-    </div>  -->
-    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
