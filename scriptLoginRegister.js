@@ -6,6 +6,7 @@ class Display {
         this.backRegisterPage = document.querySelector(".leavePageRegister");
         this.LoginToRegisterBtn = document.querySelector(".loginToRegisterBtn");
         this.RegisterToRegisterBtn = document.querySelector(".registerToLoginBtn");
+        this.logo = document.querySelector(".logo");
         this.currentLoginPage = false;
         this.currentRegisterPage = false;
 
@@ -52,6 +53,10 @@ class Display {
                 this.currentRegisterPage = false;
             }
         })
+
+        this.logo.addEventListener("click", () => {
+            location.replace("../index.html");           
+        });
     }
 
     swapRegisterLogin() {
