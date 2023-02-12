@@ -589,7 +589,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10% 0;
+    margin: 25% 0 10% 0;
 }
 
 .textLevel {
@@ -617,7 +617,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10% 0;
+    margin: 25% 0 10% 0;
 }
 
 .textLength {
