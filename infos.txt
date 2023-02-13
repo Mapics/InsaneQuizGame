@@ -1,4 +1,4 @@
-################### PROJET QUIZZEO #####################
+#################### PROJET QUIZZEO ####################
 
 ######################### USERS ########################
 
@@ -49,6 +49,16 @@ Page d'inscription :
             - modifier
             - supprimer
 
+####################### CSS #######################
 
+Font :
+    - #212529 (white)
+    - #6B9F36 (green)
+    - 20px
+    - font-family: 'Raleway', sans-serif;
+
+Background :
+    - #000 (black)
+    - #6B9F36 (green)
 
     
