@@ -1,0 +1,404 @@
+html, body {
+    height: 99%;
+    width: 99%;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+body a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* ################# HEADER ################ */
+
+.header{
+    height: 10.8%;
+    border-bottom: 2px solid #6B9F36;
+    margin: 0 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.header a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: #6B9F36;
+    transform: scale(0);
+    transition: transform 600ms;
+    transform-origin: right;
+    animation: fade-in 900ms;
+}
+
+.header a:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+.left {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.left img {
+    width: 80%;
+    height: 80%;
+}
+
+.right {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-left: 10%;
+}
+
+
+.choice {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connexion {
+    width: 27%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 3%;
+}
+
+/* ################# CONTENT ################ */
+
+
+
+/* ################## LOGIN ################## */
+
+.popupLogin {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.boxLogin {
+    background-color: #000;
+    height: 70%;
+    width: 25%;
+    border: 4px solid #6B9F36;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.contentLogin {
+    height: 100%;
+    width: 100%;
+    margin: 10%;
+}
+
+.contentLogin h2 {
+    color:#FFF;
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.btnContainer {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    border-bottom: 2px solid #6B9F36;
+    margin: 15% 0;
+    top: 20px;
+}
+
+.btnContainer label {
+    position: absolute;
+    font-size: 1.3rem;
+    transform: translateY(-50%);
+    left: 2%;
+    top: -15px;
+}
+
+.btnContainer input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #FFF;
+    font-size: 1rem;
+    margin: 0 0 1% 1%;
+}
+
+.iconLogin {
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+
+.remember {
+    height: 20%;
+    width: 100%;
+    padding-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember input {
+    margin-right: 3%;
+    accent-color: #6B9F36;
+    outline: none;
+}
+
+
+.remember label {
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+.submit {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.submit button {
+    height: 50%;
+    width: 40%;
+    background-color: transparent;
+    color: #FFF;
+    font-size: 1rem;
+    border: 2px solid #6B9F36;
+    border-radius: 2px;
+    
+}
+
+.loginRegister {
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.loginRegister a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #6B9F36;
+}
+
+.leavePageLogin {
+    height: 10%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    margin-top: 10%;
+    cursor: pointer;
+}
+
+.leavePageLogin img {
+    height: 40%;
+    margin-right: 15%;
+    animation: move-left-and-right 1s ease-in-out infinite;
+    animation-play-state: running;
+}
+@keyframes move-left-and-right {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(3px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+/* ################## REGISTER ###########          ####### */
+
+.popupRegister {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.boxRegister {
+    background-color: #000;
+    height: 70%;
+    width: 25%;
+    border: 4px solid #6B9F36;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.contentRegister {
+    height: 100%;
+    width: 100%;
+    margin: 10%;
+}
+
+.contentRegister h2 {
+    color:#FFF;
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.btnContainer {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    border-bottom: 2px solid #6B9F36;
+    margin: 15% 0;
+    top: 20px;
+}
+
+.btnContainer label {
+    position: absolute;
+    font-size: 1.3rem;
+    transform: translateY(-50%);
+    left: 2%;
+    top: -15px;
+}
+
+.btnContainer input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #FFF;
+    font-size: 1rem;
+    margin: 0 0 1% 1%;
+}
+
+.iconRegister {
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+
+.userType {
+    height: 20%;
+    width: 100%;
+    margin-left: 15%;
+    display: flex;
+}
+
+.userType input {
+    margin-right: 3%;
+    accent-color: #6B9F36;
+    outline: none;
+}
+
+.userChoice {
+    height: 100%;
+    width: 50%;
+}
+
+.quizzerChoice {
+    height: 100%;
+    width: 50%;
+}
+
+.submit {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.submit button {
+    height: 50%;
+    width: 40%;
+    background-color: transparent;
+    color: #FFF;
+    font-size: 1rem;
+    border: 2px solid #6B9F36;
+    border-radius: 2px;
+    
+}
+
+.registerLogin {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.registerLogin a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #6B9F36;
+}
+
+.leavePageRegister {
+    height: 10%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.leavePageRegister img {
+    height: 40%;
+    margin-right: 15%;
+    animation: move-left-and-right 1s ease-in-out infinite;
+    animation-play-state: running;
+}
+@keyframes move-left-and-right {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(3px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+
+
+/* ################# FOOTER ################ */
+
+.footer{
+    height: 7%;
+    border-top: 2px solid #6B9F36;
+    margin: 0 3%;
+}

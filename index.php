@@ -18,8 +18,8 @@
         </div>
         <div class="right">
             <div class="choice">
-                <a href="index.html">ACCUEIL</a>
-                <a href="catalogue/index.html">CATALOGUE</a>
+                <a href="index.php">ACCUEIL</a>
+                <a href="catalogue/index.php">CATALOGUE</a>
                 <a href="#">PROFIL</a>
             </div>
             <div class="connexion">

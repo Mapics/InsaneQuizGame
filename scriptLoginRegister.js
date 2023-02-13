@@ -55,7 +55,7 @@ class Display {
         })
 
         this.logo.addEventListener("click", () => {
-            location.replace("../index.html");           
+            location.replace("../index.php");           
         });
     }
 

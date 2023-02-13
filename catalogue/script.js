@@ -28,7 +28,7 @@ class Fonction {
 
     allQuizzPage() {
         this.allQuizz.addEventListener("click", () => {
-            location.replace("../quizz/index.html");
+            location.replace("../quizz/index.php");
         })
     }
 }
