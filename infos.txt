@@ -60,5 +60,3 @@ Font :
 Background :
     - #000 (black)
     - #6B9F36 (green)
-
-    
