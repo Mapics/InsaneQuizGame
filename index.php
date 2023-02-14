@@ -55,8 +55,9 @@
     <div class="popupLogin">
         <div class="boxLogin">
             <div class="contentLogin">
+                <!-- Formulaire de connexion -->
                 <h2>LOGIN</h2>
-                <form action="#">
+                <form action="index.php">
                     <div class="btnContainer">
                         <ion-icon name="mail-outline" class="iconLogin"></ion-icon>
                         <input type="email" required>
@@ -88,10 +89,10 @@
         <div class="boxRegister">
             <div class="contentRegister">
                 <h2>REGISTER</h2>
-                <form action="#">
+                <form method="post">
                     <div class="btnContainer">
                         <ion-icon name="mail-outline" class="iconRegister"></ion-icon>
-                        <input type="email" required>
+                        <input type="username" required>
                         <label>PSEUDO</label>
                     </div>
                     <div class="btnContainer">
@@ -114,8 +115,81 @@
                     </div>
                 </form>
                 <div class="submit">
-                    <button type="submit" class="btn">Register</button>
+                    <button type="submit" class="btn" id="formsend">Register</button>
                 </div>
+                <?php
+                include 'database.php';
+                global $db;
+
+                $q = $db->query("SELECT * FROM users");
+                while ($user = $q->fetch()) {
+                    ?>
+                    <li>
+
+                </li>
+                    <?php
+                    // echo "id :" .$userr['id']." pseudo : " . $user['pseudo'] . "<br/>" ;
+                    // var_dump($user);
+                }
+
+        // Vérification des données envoyées via le formulaire d'inscription
+        if (isset($_POST['formsend'])) {
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            // $passwordRepeat = mysqli_real_escape_string($conn, $_POST['password-repeat']);
+
+            // Vérification de la validité des données
+            if (empty($username) || empty($email) || empty($password)) {
+                header("Location: signup.php?error=emptyfields&username=".$username."&email=".$email);
+                header("Refresh:0");
+                exit();
+            } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+                header("Location: signup.php?error=invalidemailusername");
+                exit();
+            } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                header("Location: signup.php?error=invalidemail&username=".$username);
+                exit();
+            } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+                header("Location: signup.php?error=invalidusername&email=".$email);
+                exit();
+            } elseif ($password !== $passwordRepeat) {
+                header("Location: signup.php?error=passwordcheck&username=".$username."&email=".$email);
+                exit();
+            } else {
+                // Requête pour vérifier si le nom d'utilisateur ou l'email existent déjà
+                $sql = "SELECT username FROM users WHERE username=?";
+                $stmt = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    header("Location: signup.php?error=sqlerror");
+                    exit();
+                } else {
+                    mysqli_stmt_bind_param($stmt, "s", $username);
+                    mysqli_stmt_execute($stmt);
+                    mysqli_stmt_store_result($stmt);
+                    $resultCheck = mysqli_stmt_num_rows($stmt);
+                    if ($resultCheck > 0) {
+                        header("Location: .php?error=usertaken&email=".$email);
+                        exit();
+                        } else {
+                        $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+                        $stmt = mysqli_stmt_init($conn);
+                        if (!mysqli_stmt_prepare($stmt, $sql)) {
+                        header("Location: signup.php?error=sqlerror");
+                        exit();
+                        } else {
+                        // Hachage du mot de passe
+                        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                        mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPassword);
+                        mysqli_stmt_execute($stmt);
+                        header("Location: signup.php?signup=success");
+                        exit();
+                    }
+                }
+            }
+        }
+    }
+                ?>
                 <div class="registerLogin">
                     <p>You already have an account ? <a href="#" class="registerToLoginBtn">Login</a></p>
                 </div>
