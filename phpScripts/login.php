@@ -1,6 +1,5 @@
 <?php
 
-echo 'ici';
 if (isset($_POST['lformsend'])) {
     extract($_POST);
 
@@ -15,12 +14,11 @@ if (isset($_POST['lformsend'])) {
         {
             if(password_verify($lpassword, $result['password']))
             {
-                session_start();
                 $_SESSION['id'] = $result['id'];
                 $_SESSION['pseudo'] = $result['pseudo'];
                 $_SESSION['email'] = $result['email'];
                 header("Location: index.php");
-                echo 'CONNECTE EN TANT QUE '. $_SESSION['id'];
+                echo 'CONNECTE EN TANT QUE '. $_SESSION['pseudo'];
             } else {
                 echo "mot de passe incorrect";
             }

@@ -16,6 +16,9 @@ if (isset($_POST['formsend'])) {
     } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         header("Location: signup.php?error=invalidusername&email=".$email);
         exit();
+    } elseif (empty($role)) {
+        header("Location: signup.php?error=selectrole");
+        exit();
     } else {
         // Vérification si l'email de l'utilisateur existe déjà
         $verifydbl = $db->prepare("SELECT email FROM users WHERE email=:email");
@@ -30,12 +33,20 @@ if (isset($_POST['formsend'])) {
                 'cost' => 12,
             ];
             $hashpass = password_hash($password, PASSWORD_BCRYPT, $options);
-            $insert = $db->prepare("INSERT INTO users(pseudo,email,password) VALUES(:pseudo,:email,:password)");
+
+            if ($role == "quizzer")
+            {
+                $role = 1;
+            } else {
+                $role = 0;
+            }
+            $insert = $db->prepare("INSERT INTO users(pseudo,email,password,role) VALUES(:pseudo,:email,:password,:role)");
             // $res = $conn->query($q);
             $insert->execute([
                 'pseudo' => $username,
                 'email' => $email,
                 'password' => $hashpass,
+                'role' => $role,
             ]);
             echo "Le Compte a été créée";
         } else {

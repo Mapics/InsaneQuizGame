@@ -16,7 +16,7 @@
             <p>Votre pseudo : <?= $_SESSION['pseudo']; ?></p>
             <p>Votre email : <?= $_SESSION['email']; ?></p>
             <?php
-            echo '<a href="deconnexion.php">Se déconnecter</a>';
+            echo '<a href="phpScripts/deconnexion.php">Se déconnecter</a>';
         } else {
             echo '<a href="index.php">Veuiller vous connecter</a>';
         }

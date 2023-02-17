@@ -27,10 +27,27 @@ global $db;
                 <a href="catalogue/index.php">CATALOGUE</a>
                 <a href="#">PROFIL</a>
             </div>
-            <div class="connexion">
+            <?php  
+            if(isset($_SESSION['pseudo']) && (isset($_SESSION['email']))) {
+                echo $_SESSION['pseudo'];
+                ?>
+                <div class="connecte">
+                    <a href="moncompte.php" >MON COMPTE</a>
+                </div>
+                <?php
+            } else {
+                ?>
+                <div class="connexion">
+                    <a href="#" class="loginBtn">LOGIN</a>
+                    <a href="#" class="registerBtn">REGISTER</a>
+                </div>
+                <?php
+            }
+            ?>
+            <!-- <div class="connexion">
                 <a href="#" class="loginBtn">LOGIN</a>
                 <a href="#" class="registerBtn">REGISTER</a>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="content">
@@ -100,25 +117,25 @@ global $db;
                 <form method="post">
                     <div class="btnContainer">
                         <ion-icon name="mail-outline" class="iconRegister"></ion-icon>
-                        <input type="username" name="username">
+                        <input type="username" name="username" required>
                         <label>PSEUDO</label>
                     </div>
                     <div class="btnContainer">
                         <ion-icon name="mail-outline" class="iconRegister"></ion-icon>
-                        <input type="email" name="email">
+                        <input type="email" name="email" required>
                         <label>EMAIL</label>
                     </div>
                     <div class="btnContainer">
                         <ion-icon name="lock-closed-outline" class="iconRegister"></ion-icon>
-                        <input type="password" name="password">
+                        <input type="password" name="password" required>
                         <label>PASSWORD</label>
                     </div>
                     <div class="userType">
                         <div class="userChoice">
-                            <label><input type="checkbox">USER</label>
+                            <label><input type="radio" name="role" value="user" required>USER</label>
                         </div>
                         <div class="quizzerChoice">
-                            <label><input type="checkbox">QUIZZER</label>
+                            <label><input type="radio" name="role" value="quizzer" required>QUIZZER</label>
                         </div>
                     </div>
                     <div class="submit">
