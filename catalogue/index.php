@@ -20,7 +20,7 @@
             <div class="choice">
                 <a href="../index.php">ACCUEIL</a>
                 <a href="index.php">CATALOGUE</a>
-                <a href="#">PROFIL</a>
+                <a href="../profil/index.php">PROFIL</a>
             </div>
             <div class="connexion">
                 <a href="#" class="loginBtn">LOGIN</a>
@@ -34,12 +34,10 @@
                 <h2>LOGIN</h2>
                 <form action="#">
                     <div class="btnContainer">
-                        <ion-icon name="mail-outline" class="iconLogin"></ion-icon>
                         <input type="email" required>
                         <label>EMAIL</label>
-                    </div>
+                    </div> 
                     <div class="btnContainer">
-                        <ion-icon name="lock-closed-outline" class="iconLogin"></ion-icon>
                         <input type="password" required>
                         <label>PASSWORD</label>
                     </div>
@@ -66,17 +64,14 @@
                 <h2>REGISTER</h2>
                 <form action="#">
                     <div class="btnContainer">
-                        <ion-icon name="mail-outline" class="iconRegister"></ion-icon>
-                        <input type="email" required>
+                        <input type="pseudo" required>
                         <label>PSEUDO</label>
                     </div>
                     <div class="btnContainer">
-                        <ion-icon name="mail-outline" class="iconRegister"></ion-icon>
                         <input type="email" required>
                         <label>EMAIL</label>
                     </div>
                     <div class="btnContainer">
-                        <ion-icon name="lock-closed-outline" class="iconRegister"></ion-icon>
                         <input type="password" required>
                         <label>PASSWORD</label>
                     </div>
@@ -98,6 +93,32 @@
                 <div class="leavePageRegister">
                     <img src="../img/back_arrow.png" alt="">
                     <span>BACK</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-information">
+        <div class="container-information">
+            <div class="box-information">
+                <div class="image-information">
+                    <div class="image-temp-information"></div>
+                </div>
+                <div class="text-information">
+                    <div class="name-information"><span>NAME</span></div>
+                    <div class="description-information"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in rutrum nibh, non venenatis est. Sed auctor risus purus, et accumsan magna porta sed. Vivamus mattis, dui vitae rhoncus blandit, orci massa tincidunt ante, ut ullamcorper nisi nulla vitae nunc. </span></div>
+                    <div class="infos-barre-information">
+                        <span>Crée par :</span>
+                        <span>Niveau :</span>
+                        <span>Taille :</span>
+                    </div>
+                    <div class="infos-barre-information2">
+                        <span>Date :</span>
+                    </div>
+                    <div class="play-information">
+                        <div class="play-information-btn">
+                            <span>PLAY</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -184,12 +205,29 @@
                         </div>
                     </div>
                 </div>
-                <div class="navBarre">
-                    <div class="textNavBarre">
-                        <input type="text" class="navBarreInput" placeholder="CHERCHER UN QUIZZ...">
+                <div class="rightBoxFilter">
+                    <div class="navBarre">
+                        <div class="textNavBarre">
+                            <input type="text" class="navBarreInput" placeholder="CHERCHER UN QUIZZ...">
+                        </div>
+                        <div class="imageNavBarre">
+                            <img src="../img/search.png" alt="search">
+                        </div>
                     </div>
-                    <div class="imageNavBarre">
-                        <img src="../img/search.png" alt="search">
+                    <div class="filterChoice">
+                        <div class="themeChoice">
+                            <input type="text" class="navBarreTheme" placeholder="THEME... ">
+                        </div>
+                        <div class="levelChoice">
+                            <img class="difficulty-indicator1" src="../img/interrogation-normal.png" alt="interrogation-normal1">
+                            <img class="difficulty-indicator2" src="../img/interrogation-normal.png" alt="interrogation-normal2">
+                            <img class="difficulty-indicator3" src="../img/interrogation-normal.png" alt="interrogation-normal3">
+                            <img class="difficulty-indicator4" src="../img/interrogation-normal.png" alt="interrogation-normal4">
+                            <img class="difficulty-indicator5" src="../img/interrogation-normal.png" alt="interrogation-normal5">
+                        </div>
+                        <div class="lengthChoice">
+                            <input type="text" class="navBarreTheme" placeholder="TAILLE... ">
+                        </div>
                     </div>
                 </div>
             </div>

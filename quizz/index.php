@@ -20,7 +20,7 @@
             <div class="choice">
                 <a href="../index.php">ACCUEIL</a>
                 <a href="../catalogue/index.php">CATALOGUE</a>
-                <a href="#">PROFIL</a>
+                <a href="../profil/index.php">PROFIL</a>
             </div>
             <div class="connexion">
                 <a href="#" class="loginBtn">LOGIN</a>
@@ -34,12 +34,10 @@
                 <h2>LOGIN</h2>
                 <form action="#">
                     <div class="btnContainer">
-                        <ion-icon name="mail-outline" class="iconLogin"></ion-icon>
                         <input type="email" required>
                         <label>EMAIL</label>
                     </div>
                     <div class="btnContainer">
-                        <ion-icon name="lock-closed-outline" class="iconLogin"></ion-icon>
                         <input type="password" required>
                         <label>PASSWORD</label>
                     </div>
@@ -66,17 +64,14 @@
                 <h2>REGISTER</h2>
                 <form action="#">
                     <div class="btnContainer">
-                        <ion-icon name="mail-outline" class="iconRegister"></ion-icon>
                         <input type="email" required>
                         <label>PSEUDO</label>
                     </div>
                     <div class="btnContainer">
-                        <ion-icon name="mail-outline" class="iconRegister"></ion-icon>
                         <input type="email" required>
                         <label>EMAIL</label>
                     </div>
                     <div class="btnContainer">
-                        <ion-icon name="lock-closed-outline" class="iconRegister"></ion-icon>
                         <input type="password" required>
                         <label>PASSWORD</label>
                     </div>
@@ -98,6 +93,35 @@
                 <div class="leavePageRegister">
                     <img src="img/back_arrow.png" alt="">
                     <span>BACK</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="firstContainer">
+            <div class="allQuizz">
+                <div class="titleAllQuizz">
+                    <h2>TOUS NOS QUIZZ</h2>
+                </div>
+                <div class="affichesQuizzes">
+                    <div class="afficheQuizz">
+                        <div class="imageQuizz"></div>
+                        <div class="nameQuizz">
+                            <span>NAME</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="classicContainer">
+            <div class="boxContainer">
+                <div class="affichesContainers">
+                    <div class="afficheContainer">
+                        <div class="imageContainer"></div>
+                        <div class="nameContainer">
+                            <span>NAME</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

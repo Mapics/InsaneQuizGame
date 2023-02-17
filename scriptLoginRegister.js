@@ -55,7 +55,7 @@ class Display {
         })
 
         this.logo.addEventListener("click", () => {
-            location.replace("../index.php");           
+            location.replace("../Quizzeo/index.php");           
         });
     }
 
