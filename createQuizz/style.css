@@ -1,0 +1,173 @@
+html, body {
+    height: 99%;
+    width: 99%;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+body a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* ################# HEADER ################ */
+
+.header{
+    height: 9.3%;
+    border-bottom: 2px solid #d1c73d    ;
+    margin: 0 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.header a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: hwb(56 24% 18%)   ;
+    transform: scale(0);
+    transition: transform 600ms;
+    transform-origin: right;
+    animation: fade-in 900ms;
+}
+
+.header a:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+.left {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.left img {
+    width: 80%;
+    height: 80%;
+}
+
+.right {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-left: 10%;
+}
+
+
+.choice {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connexion {
+    width: 27%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 3%;
+}
+
+/* ################# CONTENT ################ */
+
+.content {
+    height: 82%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container{
+    height: 70%;
+    width: 30%;
+    margin-top: 3%;
+}
+
+.titre {
+    margin-bottom: 5%;
+    border-bottom: 2px solid #d1c73d;
+}
+
+.question {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+}
+
+.legende {
+    height: 3%;
+    width: 100%;
+    display: flex;
+    margin: 3% 20%;
+    font-size: 20px;
+}
+
+.container input[type="text"] {
+    margin: 0 3% 2% 0;
+    background-color: transparent;
+    border: transparent;
+    color: #fff;
+    font-size: 120%;
+    margin-left: 2%;
+    outline: none;
+    border-bottom: 2px solid #d1c73d;
+}
+
+.container input[type="number"] {
+    margin: 0 3% 2% 0;
+    background-color: transparent;
+    border: transparent;
+    color: #fff;
+    font-size: 120%;
+    margin-left: 2%;
+    outline: none;
+    border-bottom: 2px solid #d1c73d;
+}
+
+.container input[type="radio"] {
+    accent-color: hwb(56 24% 18%)   ;
+    outline: none;
+    margin: 0 3% 0 5%;
+}
+
+#btn-create button{
+    margin-top: 2%;
+    height: 7%;
+    width: 40%;
+    border: 2px solid #d1c73d;
+    background-color: transparent;
+    color: #fff;
+    margin-left: 5%;
+}
+
+.submitContainer {
+    width: 30%;
+    height: 10%;
+    display: flex;
+}
+
+#btn-create input {
+    margin-top: 7%;
+    height: 50%;
+    width: 40%;
+    border: 2px solid #d1c73d;
+    background-color: transparent;
+    color: #fff;
+    margin-left: 5%;
+}

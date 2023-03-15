@@ -1,5 +1,6 @@
 class Fonction {
-    constructor() {     
+    constructor() {
+        // STORAGE OF DIVS IN VARIABLES 
         this.filter = document.querySelector(".viewFilter");
         this.theme = document.querySelector(".themeFilter");
         this.level = document.querySelector(".levelFilter");
@@ -11,10 +12,18 @@ class Fonction {
         this.difficulty_indicator_4 = document.querySelector(".difficulty-indicator4");
         this.difficulty_indicator_5 = document.querySelector(".difficulty-indicator5");
 
+        this.affichePop = document.querySelector(".affichePopulaire");
+        this.afficheBeginner = document.querySelector(".afficheBeginner");
+        this.afficheRelease = document.querySelector(".afficheRelease");
+        this.backInfos = document.querySelector(".back-information");
+        this.afficheQuizz = document.querySelector(".afficheQuizz");
+        
+        // CURRENT STATUS OF POP-UPS
         this.currentFilter = false;
         this.currentTheme = false;
         this.currentLevel = false;
         this.currentLength = false;
+        this.currentInfos = false;
 
         this.currentLvlSelector = 0;
 
@@ -25,14 +34,67 @@ class Fonction {
         this.evenListener();
     }
 
+    // FUNCTION THAT GROUPS ALL EVENT FUNCTIONS
     evenListener() {
         this.filterOptionsShow();
         this.allQuizzPage();
         this.optionsShow();
         // this.difficultySelectorHover();
         this.difficultyIndicatorGestion();
+        this.popupInfosOnClick();
+        this.popupInfosBack();
     }
 
+    // FUNCTION THAT DISPLAYS THE POPUP-INFORMATION WHEN YOU CLICK ON BUTTON
+    popupInfosOnClick() {
+        this.affichePop.addEventListener("click", () => {
+            if(!this.currentInfos) {
+                $(".popup-information").css("visibility", "visible");
+                $(".viewFilter").css("z-index", "-99");
+                $(".navBarre").css("z-index", "-99");
+                this.currentInfos = true;
+            }
+        })
+
+        this.afficheBeginner.addEventListener("click", () => {
+            if(!this.currentInfos) {
+                $(".popup-information").css("visibility", "visible");
+                $(".viewFilter").css("z-index", "-99");
+                $(".navBarre").css("z-index", "-99");
+                this.currentInfos = true;
+            }
+        })
+
+        this.afficheRelease.addEventListener("click", () => {
+            if(!this.currentInfos) {
+                $(".popup-information").css("visibility", "visible");
+                $(".viewFilter").css("z-index", "-99");
+                $(".navBarre").css("z-index", "-99");
+                this.currentInfos = true;
+            }
+        })
+
+        this.afficheQuizz.addEventListener("click", () => {
+            if(!this.currentInfos) {
+                $(".popup-information").css("visibility", "visible");
+                this.currentInfos = true;
+            }
+        })
+    }
+
+    // FUNCTION THAT HIDES THE POPUP-INFORMATION WHEN YOU CLICK ON BACK
+    popupInfosBack() {
+        this.backInfos.addEventListener("click", () => {
+            if(this.currentInfos) {
+                $(".popup-information").css("visibility", "hidden");
+                $(".viewFilter").css("z-index", "99");
+                $(".navBarre").css("z-index", "99");
+                this.currentInfos = false;
+            }
+        })
+    }
+    
+    // FUNCTION THAT DISPLAYS THE FILTER OPTION WHEN YOU CLICK ON "FILTER"
     filterOptionsShow() {
         this.filter.addEventListener("click", () => {
             if(!this.currentFilter) {
@@ -48,12 +110,14 @@ class Fonction {
         })
     }
 
+    // FUNCTION THAT SWITCH PAGE WHEN USER CLICK ON "TOUT VOIR"
     allQuizzPage() {
         this.allQuizz.addEventListener("click", () => {
             location.replace("../quizz/index.php");
         })
     }
 
+    // FUNCTION THAT DISPLAYS THE THEME FILTER
     optionsShow () {
         this.theme.addEventListener("click", () => {
             if(!this.currentTheme) {
@@ -101,6 +165,7 @@ class Fonction {
         });
     }
 
+    // FUNCTION NOT USED BUT IT IS USED TO MANAGE THE DISPLAY OF THE DIFFICULTY WITH THE HOVER
     difficultySelectorHover() {
         if(this.currentLvlSelector === 0) {
             $(".difficulty-indicator1").hover(function() {
@@ -153,6 +218,7 @@ class Fonction {
         } 
     }
 
+    // FUNCTION THAT DISPLAYS THE DIFFICULTY FILTER AND THE MANAGEMENT OF THE DISPLAY WHEN YOU CHOOSE THE DIFFICULTY
     difficultyIndicatorGestion() {
         $(".difficulty-indicator1").click(function() {
             $(".difficulty-indicator1").attr("src", "../img/interrogation-yellow.png").css("transform", "scale(1.2)");

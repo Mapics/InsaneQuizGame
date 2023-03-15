@@ -25,6 +25,8 @@ class Display {
         this.loginBtn.addEventListener("click", () => {
             if(!this.currentLoginPage) {
                 $(".popupLogin").css("visibility", "visible");
+                $(".viewFilter").css("z-index", "-99");
+                $(".navBarre").css("z-index", "-99");
                 this.currentLoginPage = true;
             }
         });
@@ -34,6 +36,8 @@ class Display {
         this.registerBtn.addEventListener("click", () => {
             if(!this.currentRegisterPage) {
                 $(".popupRegister").css("visibility", "visible");
+                $(".viewFilter").css("z-index", "-99");
+                $(".navBarre").css("z-index", "-99");
                 this.currentRegisterPage = true;
             }
         });
@@ -43,6 +47,8 @@ class Display {
         this.backLoginPage.addEventListener("click", () => {
             if(this.currentLoginPage) {
                 $(".popupLogin").css("visibility", "hidden");
+                $(".viewFilter").css("z-index", "99");
+                $(".navBarre").css("z-index", "99");
                 this.currentLoginPage = false;
             }
         });
@@ -50,6 +56,8 @@ class Display {
         this.backRegisterPage.addEventListener("click", () => {
             if(this.currentRegisterPage) {
                 $(".popupRegister").css("visibility", "hidden");
+                $(".viewFilter").css("z-index", "99");
+                $(".navBarre").css("z-index", "99");
                 this.currentRegisterPage = false;
             }
         })
